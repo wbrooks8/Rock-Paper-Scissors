@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        background-image: url(main-background.jpg);
+        background-size: 100%;
+    }
+
+    @font-face {
+        font-family: myFirstFont;
+        src: url(berkah.ttf)
+    }
+
+    h1 {
+        position: fixed;
+        font-size: 95px;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, -80%);
+        color: rgb(180, 86, 42);
+        font-family: myFirstFont;
+        text-shadow: -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
+    }
+
+    #buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -80%);
+    }
+
+    .buttons {
+        margin-left: 60px;
+        margin-right: 60px;
+        height: 130px;
+        width: 130px;
+    }
+
+    .buttons:hover {
+        opacity: 80%;
+        transition: all .2s ease-in-out;
+        transform: scale(1.1);
+    }
+
+    .buttons:active {
+        border: none;
+    }
+
+    #results {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -80%);
+        color:rgb(180, 86, 42);
+        font-size: 60px;
+        font-family: myFirstFont;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    #computer {
+        position: absolute;
+        right: 10px; 
+        top: 0%;
+        max-width: 35%;
+    }
+
+    #user {
+        position: absolute;
+        left: 10px; 
+        top: 0%;
+        max-width: 35%;
+    }
+
+    #computer-banner {
+        max-width: 100%;
+        z-index: 1;
+    }
+
+    #user-banner {
+        max-width: 100%;
+        z-index: 1;
+    }
+
+    #user-score {
+        position: absolute;
+        font-size: 30px;
+        top: 15%;
+        left: 50%;
+        transform: translate(-47%, 50%);
+        color: white;
+        z-index: 3;
+    }
+
+    #computer-score {
+        position: absolute;
+        font-size: 30px;
+        top: 15%;
+        left: 50%;
+        transform: translate(-52%, 50%);
+        color: white;
+        z-index: 3;
+    }
+
+    .score {
+        position: absolute;
+        font-size: 150px;
+        top: 15%;
+        left: 50%;
+        transform: translate(-52%, 50%);
+        color: white;
+        z-index: 3;
+    }
+
+@media screen and (max-width: 1000px) {
+    body {
+        background-image: url(main-background.jpg);
+        background-size: 400%;
+        background-repeat: no-repeat;
+    }
+
+    #buttons {
+        position: relative;
+        top: 80vh;
+    }
+
+    .buttons {
+        width: 10vh;
+        height: auto;
+        
+    }
+
+    #results {
+        position: absolute;
+        bottom: 9vh;
+        width: 100%;
+        margin: auto;
+        font-size: 90px;
+        text-align: center;
+    }
+
+    #user {
+        max-width: 50vw;
+        left: 0px;
+        height: auto;
+        top: 20vh;
+
+    }
+
+    #user-banner {
+        max-width: 500px;
+        height: auto;
+    }
+
+    #scoreU {
+        bottom: 200px;
+    }
+
+    #computer {
+        max-width: 50vw;
+        right: 0px;
+        height: auto;
+        top: 20vh;
+    }
+
+    #computer-banner {
+        max-width: 500px;
+        height: auto;
+    }
+
+    #scoreC {
+        bottom: 200px;
+    }
+
+    h1 {
+        top: 10vh;
+        width: 100vw;
+        text-align: center;
+        font-size: 100px;
+    }
+}
+
+    
+</style>
+<title>Rock Paper Scissors</title>
+</head>
+<body>
+    <h1> Rock Paper Scissors </h1>
+    <audio autoplay loop>
+        <source src="the-medieval-banquet.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id='buttons'>
+        <input type="image" src="rock.png" class="buttons" id="rock"></button>
+        <input type="image" src="paper2.png" class="buttons" id="paper"></button>
+        <input type="image" src="scissors.png" class="buttons" id="scissors"></button>
+    </div>
+
+    <div>
+        <p id="results"></p>
+    </div>
+
+    <div id="user">
+        <h2 id="user-score">Your Score</h2>
+        <h2 class="score" id="scoreU">0</h2>
+        <img src="banner2.png" id="user-banner">
+        <img>
+    </div>
+        
+    <div id="computer">
+        <h2 id="computer-score">Computer Score</h2>
+        <h2 class="score" id="scoreC">0</h2>
+        <img src="banner3.png" id="computer-banner">
+    </div>
+
+
+<script src="script.js"> 
+
+</script>
+
+</body>
+</html>
